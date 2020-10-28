@@ -26,7 +26,7 @@ public class Deck {
         }
     }
 
-    public void showCards() {
+    public void showCards()  {
         System.out.println("Mostrando Cards: ");
         int i = 1;
         for (Card c : deck) {
@@ -34,19 +34,34 @@ public class Deck {
         }
     }
     
-    public Card drawRandomCard()
+    public Card drawRandomCard() throws Exception
     {
+        if(deck.isEmpty())
+        {
+            throw new Exception("Deck is empty");
+        }
+        else
+        {  
         Random generator = new Random();
         int index = generator.nextInt(deck.size());
         return deck.remove(index);
+        }
     }
     
-    public void head()
+    public void head() throws Exception
     {
+        if(deck.isEmpty())
+        {
+            throw new Exception("Deck is empty");
+        }
+        else
+        {  
         int index = 0;
         deck.get(index);
         System.out.println("Mostrando Head: \n" + deck.get(index));
         deck.remove(index);
+        
+        }
     }
 
     public void shuffle() {

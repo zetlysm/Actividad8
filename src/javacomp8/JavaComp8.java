@@ -15,7 +15,7 @@ public class JavaComp8 {
 
    
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
         int menuOption;
         Deck myDeck = new Deck();
@@ -37,10 +37,15 @@ public class JavaComp8 {
                     System.out.println(myDeck.toString());
                     break;
                 case 2:
+                    try{
                     myDeck.head();
                     System.out.println(myDeck.toString());
+                    } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                    }
                     break;
                 case 3:
+                    try{
                     int numberCards = 1;
                     System.out.println("Mostrando una tarjeta: ");
                     for (int i = 0; i < numberCards; i++) {
@@ -48,8 +53,12 @@ public class JavaComp8 {
                         System.out.println(C.toString());
                     }
                     System.out.println(myDeck.toString());
+                    } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                    }
                     break;
                 case 4:
+                    try{
                     int fiveCards = 5;
                     System.out.println("Mostrando cinco tarjetas: ");
                     for (int i = 0; i < fiveCards; i++) {
@@ -57,6 +66,9 @@ public class JavaComp8 {
                         System.out.println(C.toString());
                     }
                     System.out.println(myDeck.toString());
+                    } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                    }
                     break;
                 case 0:
                     quit = true;
